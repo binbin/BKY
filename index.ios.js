@@ -18,6 +18,8 @@ import {
 // import Icon from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import Home from './components/home.js'
+
 const styles = StyleSheet.create({
   navigator: {
     flex: 1,
@@ -118,7 +120,14 @@ class BKY extends Component {
               selectedTab: 'home',
             });
           }}>
-          {this._renderContent('#414A8C', 'Home')}
+           <NavigatorIOS
+              style={styles.navigator}
+              initialRoute={{
+                component: Home,
+                passProps: {},
+                title: 'Home'
+              }}
+            />
         </Icon.TabBarItemIOS>
         <Icon.TabBarItemIOS
           title="高校"
