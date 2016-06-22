@@ -20,6 +20,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './components/home.js'
 
+import SchoolList from './components/school_list.js'
+
 const styles = StyleSheet.create({
   navigator: {
     flex: 1,
@@ -139,7 +141,14 @@ class BKY extends Component {
               selectedTab: 'profile',
             });
           }}>
-          {this._renderContent('#090', 'Profile')}
+         <NavigatorIOS
+              style={styles.navigator}
+              initialRoute={{
+                component: SchoolList,
+                passProps: {},
+                title: '高校'
+              }}
+            />
         </Icon.TabBarItemIOS>
         <Icon.TabBarItemIOS
           title="专业"
